@@ -8,7 +8,7 @@ class AboutControlStatements < Neo::Koan
     else
       result = :false_value
     end
-    assert_equal __, result
+    assert_equal :true_value, result
   end
 
   def test_if_then_statements
@@ -16,23 +16,23 @@ class AboutControlStatements < Neo::Koan
     if true
       result = :true_value
     end
-    assert_equal __, result
+    assert_equal :true_value, result  
   end
 
   def test_if_statements_return_values
     value = if true
               :true_value
-            else
+            else  
               :false_value
             end
-    assert_equal __, value
+    assert_equal :true_value, value
 
     value = if false
               :true_value
             else
               :false_value
             end
-    assert_equal __, value
+    assert_equal :false_value, value
 
     # NOTE: Actually, EVERY statement in Ruby will return a value, not
     # just if statements.
@@ -42,7 +42,7 @@ class AboutControlStatements < Neo::Koan
     value = if false
               :true_value
             end
-    assert_equal __, value
+    assert_equal nil, value
   end
 
   def test_condition_operators
